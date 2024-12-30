@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Following Luggage Carrier</title>
+</head>
+<body>
+    <h1>Human Following Luggage Carrier</h1>
+    <button onclick="setMode('manual')">Manual Mode</button>
+    <button onclick="setMode('autonomous')">Autonomous Mode</button>
+    <div>
+        <button onclick="sendControl('forward')">Forward</button>
+        <button onclick="sendControl('backward')">Backward</button>
+        <button onclick="sendControl('left')">Left</button>
+        <button onclick="sendControl('right')">Right</button>
+        <button onclick="sendControl('stop')">Stop</button>
+    </div>
+    <script>
+        function setMode(mode) {
+            fetch('/mode', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ mode: mode })
+            });
+        }
+
+        function sendControl(action) {
+            fetch('/manual_control', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action: action })
+            });
+        }
+    </script>
+</body>
+</html>
