@@ -111,7 +111,7 @@ Defines Flask routes for switching between modes and handling manual control com
 ---
 
 ## Model Details
-- **EfficientDet:** Pre-trained EfficientDet D2 model is used for human detection and tracking.
+- **EfficientDet:** Pre-trained EfficientDet D0 model is used for human detection and tracking.
 
 - **Bounding Box Analysis:** The center of the detected bounding box determines the direction the robot should move.
 
